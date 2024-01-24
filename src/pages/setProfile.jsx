@@ -17,13 +17,13 @@ function SetProfile() {
 
     const curSetInfoQ = useQuery({
         queryKey: ['setInfoQ', params.sid],
-        queryFn: () => axios.get(`http://localhost:3000/api/sets/${params.sid}`).then((res) => res.data),
+        queryFn: () => axios.get(`https://api.boxcards.app/api/sets/${params.sid}`).then((res) => res.data),
         placeholderData: { author: '', name: '', isPublished: true },
         retry: 0,
     });
 
     const cardsDataQueryKey = ['setCardsQ', params.sid];
-    const cardsDataQueryFn = () => axios.get(`http://localhost:3000/api/sets/${params.sid}/cards`).then((res) => res.data);
+    const cardsDataQueryFn = () => axios.get(`https://api.boxcards.app/api/sets/${params.sid}/cards`).then((res) => res.data);
 
     if (curSetInfoQ.isPending) {
         return <div>placeholder data skips this</div>;
@@ -43,7 +43,7 @@ function SetProfile() {
                     <h1 className={'text-3xl font-bold flex-1 mr-8 break-words overflow-auto'}> {curSetInfoQ.isPlaceholderData || (curSetInfoQ.data.isPublished === false && authCheckQ.data.username !== curSetInfoQ.data.author) ? null
                         : <EditableText textValue={curSetInfoQ.data.name} textRenderQueryKey={['setInfoQ', params.sid]}
                             open={isNameTextOpen} setOpen={setIsNameTextOpen} setErrorMessage={setContentError}
-                            patchURL={`http://localhost:3000/api/sets/${params.sid}`} extraBody={{ isPublished: false }}
+                            patchURL={`https://api.boxcards.app/api/sets/${params.sid}`} extraBody={{ isPublished: false }}
                             isName={true} maxLen={50} bgColor={'bgPrimary'} />}
                     </h1>
                     {

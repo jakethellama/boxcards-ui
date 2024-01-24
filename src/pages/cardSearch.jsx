@@ -19,9 +19,9 @@ function CardSearch() {
     const cardsDataQueryKey = ['cardSearchQ', searchParams.get('word')];
     const cardsDataQueryFn = () => {
         if (searchParams.get('word') === null || searchParams.get('word') === '') {
-            return axios.get('http://localhost:3000/api/cards').then((res) => res.data);
+            return axios.get('https://api.boxcards.app/api/cards').then((res) => res.data);
         } else {
-            return axios.get(`http://localhost:3000/api/cards?word=${searchParams.get('word')}`).then((res) => res.data);
+            return axios.get(`https://api.boxcards.app/api/cards?word=${searchParams.get('word')}`).then((res) => res.data);
         }
     };
 

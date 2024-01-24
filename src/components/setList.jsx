@@ -18,7 +18,7 @@ function SetList({ dataQueryKey, dataQueryFn, canPost, setContentError }) {
 
     const postSetM = useMutation({
 
-        mutationFn: () => axios.post('http://localhost:3000/api/sets', { name: 'Untitled Private Set' }).then((res) => res.data),
+        mutationFn: () => axios.post('https://api.boxcards.app/api/sets', { name: 'Untitled Private Set' }).then((res) => res.data),
 
         onMutate: async () => {
             await queryClient.cancelQueries(['profileSetsQ', params.username]);

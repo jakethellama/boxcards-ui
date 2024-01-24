@@ -18,7 +18,7 @@ function SignUp() {
     const [submitStatus, setSubmitStatus] = useState(null);
 
     const signUpM = useMutation({
-        mutationFn: ({ username, password, icon }) => axios.post('http://localhost:3000/api/boxes', { username, password, icon }).then((res) => res.data),
+        mutationFn: ({ username, password, icon }) => axios.post('https://api.boxcards.app/api/boxes', { username, password, icon }).then((res) => res.data),
         onError: (error) => {
             switch (error.response.status) {
                 case 400:

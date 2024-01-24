@@ -18,7 +18,7 @@ function BoxProfile() {
 
     const curProfileInfoQ = useQuery({
         queryKey: ['profileInfoQ', params.username],
-        queryFn: () => axios.get(`http://localhost:3000/api/boxes/${params.username}`).then((res) => res.data),
+        queryFn: () => axios.get(`https://api.boxcards.app/api/boxes/${params.username}`).then((res) => res.data),
         placeholderData: { icon: '', username: '' },
         staleTime: 0,
         retry: 0,
@@ -33,7 +33,7 @@ function BoxProfile() {
     }
 
     const setsDataQueryKey = ['profileSetsQ', params.username];
-    const setsDataQueryFn = () => axios.get(`http://localhost:3000/api/boxes/${params.username}/sets`).then((res) => res.data);
+    const setsDataQueryFn = () => axios.get(`https://api.boxcards.app/api/boxes/${params.username}/sets`).then((res) => res.data);
 
     function switchTab(tab) {
         setContentError(null);
@@ -41,10 +41,10 @@ function BoxProfile() {
     }
 
     const cardsDataQueryKey = ['profileCardsQ', params.username];
-    const cardsDataQueryFn = () => axios.get(`http://localhost:3000/api/boxes/${params.username}/cards`).then((res) => res.data);
+    const cardsDataQueryFn = () => axios.get(`https://api.boxcards.app/api/boxes/${params.username}/cards`).then((res) => res.data);
 
     const favsDataQueryKey = ['authUserFavsQ'];
-    const favsDataQueryFn = () => axios.get('http://localhost:3000/api/authUserFavs').then((res) => (res.data));
+    const favsDataQueryFn = () => axios.get('https://api.boxcards.app/api/authUserFavs').then((res) => (res.data));
 
     function activeTabContent() {
         switch (activeTab) {

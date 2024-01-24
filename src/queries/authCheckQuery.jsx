@@ -9,7 +9,7 @@ function useAuthCheckQuery(hasPlaceholder) {
     return useQuery({
         queryKey: ['authCheckQ'],
 
-        queryFn: () => axios.get('http://localhost:3000/api/authCheck').then((res) => res.data),
+        queryFn: () => axios.get('https://api.boxcards.app/api/authCheck').then((res) => res.data),
         placeholderData,
         staleTime: 30,
         retry: 1,

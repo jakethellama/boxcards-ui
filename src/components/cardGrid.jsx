@@ -19,7 +19,7 @@ function CardGrid({ dataQueryKey, dataQueryFn, canRemove, canPost, setContentErr
 
     if (canRemove) {
         setInfoKey = ['setInfoQ', params.sid];
-        setInfoFn = () => axios.get(`http://localhost:3000/api/sets/${params.sid}`).then((res) => res.data);
+        setInfoFn = () => axios.get(`https://api.boxcards.app/api/sets/${params.sid}`).then((res) => res.data);
     }
 
     const curSetInfoQ = useQuery({
@@ -84,7 +84,7 @@ function CardGrid({ dataQueryKey, dataQueryFn, canRemove, canPost, setContentErr
                 }
             });
 
-            return axios.patch(`http://localhost:3000/api/sets/${params.sid}/cards`, { cidArr }).then((res) => res.data);
+            return axios.patch(`https://api.boxcards.app/api/sets/${params.sid}/cards`, { cidArr }).then((res) => res.data);
         },
         onSuccess: (data, zzz, context) => {
             queryClient.invalidateQueries({ queryKey: ['authUserSetsQ'] });
@@ -98,7 +98,7 @@ function CardGrid({ dataQueryKey, dataQueryFn, canRemove, canPost, setContentErr
     }
 
     const postCardM = useMutation({
-        mutationFn: () => axios.post('http://localhost:3000/api/cards', { word: '', definition: '' }).then((res) => res.data),
+        mutationFn: () => axios.post('https://api.boxcards.app/api/cards', { word: '', definition: '' }).then((res) => res.data),
 
         onMutate: async () => {
             await queryClient.cancelQueries(['profileCardsQ', params.username]);

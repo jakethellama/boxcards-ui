@@ -17,7 +17,7 @@ function CardNoEdit({ isSelectMode, handleSelect,
     }
 
     const patchAuthUserFavsM = useMutation({
-        mutationFn: () => axios.patch(`http://localhost:3000/api/boxes/${authUserInfoQ.data.username}/favorites`, { cid }).then((res) => res.data),
+        mutationFn: () => axios.patch(`https://api.boxcards.app/api/boxes/${authUserInfoQ.data.username}/favorites`, { cid }).then((res) => res.data),
         onMutate: async () => {
             setFavError(null);
             await queryClient.cancelQueries({ queryKey: ['authUserInfoQ'] });

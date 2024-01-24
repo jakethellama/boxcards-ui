@@ -6,7 +6,7 @@ function useAuthUserInfoQuery() {
     return useQuery({
         queryKey: ['authUserInfoQ'],
 
-        queryFn: () => axios.get('http://localhost:3000/api/authUserInfo').then((res) => res.data),
+        queryFn: () => axios.get('https://api.boxcards.app/api/authUserInfo').then((res) => res.data),
         placeholderData,
         staleTime: 100,
     });

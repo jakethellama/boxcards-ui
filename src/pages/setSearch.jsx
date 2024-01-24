@@ -20,9 +20,9 @@ function SetSearch() {
     const setsDataQueryKey = ['setSearchQ', searchParams.get('name')];
     const setsDataQueryFn = () => {
         if (searchParams.get('name') === null || searchParams.get('name') === '') {
-            return axios.get('http://localhost:3000/api/sets').then((res) => res.data);
+            return axios.get('https://api.boxcards.app/api/sets').then((res) => res.data);
         } else {
-            return axios.get(`http://localhost:3000/api/sets?name=${searchParams.get('name')}`).then((res) => res.data);
+            return axios.get(`https://api.boxcards.app/api/sets?name=${searchParams.get('name')}`).then((res) => res.data);
         }
     };
 

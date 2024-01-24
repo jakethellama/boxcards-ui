@@ -36,7 +36,7 @@ function SetPatchDropDown({ setIsNameTextOpen, nameValue, setErrorMessage }) {
     }
 
     const publishSetM = useMutation({
-        mutationFn: () => axios.patch(`http://localhost:3000/api/sets/${params.sid}`, { name: nameValue, isPublished: true }).then((res) => res.data),
+        mutationFn: () => axios.patch(`https://api.boxcards.app/api/sets/${params.sid}`, { name: nameValue, isPublished: true }).then((res) => res.data),
         onSuccess: async (data) => {
             await queryClient.invalidateQueries({ queryKey: ['setCardsQ', params.sid] });
             queryClient.setQueryData(['setInfoQ', params.sid], data);
@@ -57,7 +57,7 @@ function SetPatchDropDown({ setIsNameTextOpen, nameValue, setErrorMessage }) {
     }
 
     const deleteSetM = useMutation({
-        mutationFn: () => axios.delete(`http://localhost:3000/api/sets/${params.sid}`).then((res) => res.data),
+        mutationFn: () => axios.delete(`https://api.boxcards.app/api/sets/${params.sid}`).then((res) => res.data),
         onSuccess: async (data) => {
             queryClient.invalidateQueries({ queryKey: ['authUserSetsQ'] });
         },

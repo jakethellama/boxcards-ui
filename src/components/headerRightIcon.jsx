@@ -31,7 +31,7 @@ function HeaderRightIcon() {
     }
 
     const logoutM = useMutation({
-        mutationFn: () => axios.post('http://localhost:3000/api/logout').then((res) => res.data),
+        mutationFn: () => axios.post('https://api.boxcards.app/api/logout').then((res) => res.data),
         onSuccess: () => {
             queryClient.removeQueries();
         },

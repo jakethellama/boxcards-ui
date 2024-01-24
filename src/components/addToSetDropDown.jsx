@@ -8,7 +8,7 @@ function AddToSetDropDown({ toggleSelectMode, selectedCIDs }) {
 
     const authUserSetsQ = useQuery({
         queryKey: ['authUserSetsQ'],
-        queryFn: async () => axios.get('http://localhost:3000/api/authUserSets').then((res) => res.data),
+        queryFn: async () => axios.get('https://api.boxcards.app/api/authUserSets').then((res) => res.data),
         placeholderData: [],
         staleTime: 0,
         retry: 2,
@@ -83,7 +83,7 @@ function SetDropDownItem({ name, sid, toggleSelectMode, selectedCIDs, prevCards 
                 i += 1;
             }
 
-            return axios.patch(`http://localhost:3000/api/sets/${sid}/cards`, { cidArr }).then((res) => res.data);
+            return axios.patch(`https://api.boxcards.app/api/sets/${sid}/cards`, { cidArr }).then((res) => res.data);
         },
         onSuccess: (data, zzz, context) => {
             queryClient.invalidateQueries({ queryKey: ['authUserSetsQ'] });

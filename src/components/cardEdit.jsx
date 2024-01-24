@@ -23,7 +23,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
 
     const privCardInfoQ = useQuery({
         queryKey: ['privCardInfoQ', cid],
-        queryFn: () => axios.get(`http://localhost:3000/api/cards/${cid}`).then((res) => res.data),
+        queryFn: () => axios.get(`https://api.boxcards.app/api/cards/${cid}`).then((res) => res.data),
         initialData: { word, def, isPublished },
         refetchOnMount: false,
         retry: 0,
@@ -35,7 +35,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
     const textAreaRef = useRef();
 
     const patchCardInfoM = useMutation({
-        mutationFn: () => axios.patch(`http://localhost:3000/api/cards/${cid}`, { word: newWordValue, definition: newDefValue, isPublished }).then((res) => res.data),
+        mutationFn: () => axios.patch(`https://api.boxcards.app/api/cards/${cid}`, { word: newWordValue, definition: newDefValue, isPublished }).then((res) => res.data),
 
         onMutate: async () => {
             await queryClient.cancelQueries({ queryKey: ['privCardInfoQ', cid] });
@@ -56,7 +56,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
     });
 
     const publishCardM = useMutation({
-        mutationFn: () => axios.patch(`http://localhost:3000/api/cards/${cid}`, { word: newWordValue, definition: newDefValue, isPublished: true }).then((res) => res.data),
+        mutationFn: () => axios.patch(`https://api.boxcards.app/api/cards/${cid}`, { word: newWordValue, definition: newDefValue, isPublished: true }).then((res) => res.data),
         onMutate: async () => {
             await queryClient.cancelQueries({ queryKey: ['privCardInfoQ', cid] });
             const previousCardInfo = queryClient.getQueryData(['privCardInfoQ', cid]);
@@ -75,7 +75,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
     });
 
     const deleteCardM = useMutation({
-        mutationFn: () => axios.delete(`http://localhost:3000/api/cards/${cid}`).then((res) => res.data),
+        mutationFn: () => axios.delete(`https://api.boxcards.app/api/cards/${cid}`).then((res) => res.data),
         onMutate: async () => {
             await queryClient.cancelQueries({ queryKey: ['privCardInfoQ', cid] });
             const previousCardInfo = queryClient.getQueryData(['privCardInfoQ', cid]);
@@ -112,7 +112,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
     }, []);
 
     const patchAuthUserFavsM = useMutation({
-        mutationFn: () => axios.patch(`http://localhost:3000/api/boxes/${authUserInfoQ.data.username}/favorites`, { cid }).then((res) => res.data),
+        mutationFn: () => axios.patch(`https://api.boxcards.app/api/boxes/${authUserInfoQ.data.username}/favorites`, { cid }).then((res) => res.data),
         onMutate: async () => {
             setFavError(null);
             await queryClient.cancelQueries({ queryKey: ['authUserInfoQ'] });
