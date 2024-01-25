@@ -9,8 +9,9 @@ function Errors() {
         if (e.code === 'ERR_NETWORK' && e.message === 'Network Error') {
             return (
                 <>
-                    <div className='mt-8 px-8 text-xl text-center'>
-                        <h1>Uh oh, you couldn&apos;t connect to the server, please try again later!</h1>
+                    <div className='mt-8 px-8 text-center'>
+                        <h1 className='text-xl'>Uh oh, you couldn&apos;t connect to the server, please try again later!</h1>
+                        <p>(I probably turned off my servers)</p>
                     </div>
                 </>
             );
