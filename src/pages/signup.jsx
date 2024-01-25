@@ -92,15 +92,15 @@ function SignUp() {
 
     return (
         <div className='flex h-screen items-center justify-center'>
-            <form onSubmit={handleSubmit} className='flex flex-col gap-2 overflow-auto max-w-[500px] max-h-[550px] px-3 pt-2.5 pb-2.5 xxs:px-4 xxs:pt-3.5  w-[90%] h-[90%] rounded-2xl bg-bgTwo'>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-2 overflow-auto max-w-[500px] max-h-[540px] px-3.5 pt-3 pb-3 xxs:px-4 xxs:pt-3.5  w-[88%] h-[90%] rounded-2xl bg-bgTwo'>
                 <h1 className='text-3xl font-bold'>Sign Up</h1>
 
                 <p className='font-medium text-lg mt-3'>Username</p>
-                <input className={`bg-bgThree block px-2 py-1 xxs:mr-1 focus:ring-fillPrimary focus:ring-2 ${usernameError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none`} value={usernameValue} onChange={handleUsernameChange} />
+                <input className={`bg-bgThree block px-2 py-1 mr-0.5 focus:ring-fillPrimary focus:ring-2 ${usernameError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none`} value={usernameValue} onChange={handleUsernameChange} />
                 <p className={`text-xs text-errorPrimary ${usernameError !== null ? '' : 'hidden'}`}>{usernameError}</p>
 
                 <p className='font-medium text-lg mt-4'>Password</p>
-                <input className={`bg-bgThree block px-2 py-1 xxs:mr-1 focus:ring-fillPrimary focus:ring-2 ${passwordError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none`} value={passwordValue} onChange={handlePasswordChange}/>
+                <input type="password" className={`bg-bgThree block px-2 py-1 mr-0.5 focus:ring-fillPrimary focus:ring-2 ${passwordError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none`} value={passwordValue} onChange={handlePasswordChange}/>
                 <p className={`text-xs text-errorPrimary ${passwordError !== null ? '' : 'hidden'}`}>{passwordError}</p>
 
                 <button className='bg-bgFour hover:ring-1 hover:ring-fillPrimary active:bg-bgFive rounded-lg font-medium mt-6 py-2 px-6 self-start'>Submit</button>

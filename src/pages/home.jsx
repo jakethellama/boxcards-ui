@@ -18,8 +18,8 @@ function Home() {
     return (
         <>
             <div className='min-h-[92vh] flex flex-col items-center justify-center'>
-                <Link to='/cards' className='cursor-pointer text-6xl font-bold hover:text-fillPrimary'>BoxCards</Link>
-                <div className='relative p-2 mt-3.5 mb-6 cursor-pointer group'>
+                <Link to='/cards' className='cursor-pointer text-[3.7rem] font-bold hover:text-fillPrimary'>BoxCards</Link>
+                <div className='relative p-2 mt-1 mb-8 cursor-pointer group'>
                     <Link to='/cards' className='absolute top-0 left-0 w-full h-full'></Link>
                     <svg
                         className='h-[5.25rem] stroke-black fill-white group-hover:fill-fillPrimary '
@@ -54,6 +54,7 @@ function Home() {
                     <Link to="/signup" className='buttonStyle font-semibold bg-bgThree active:bg-bgFour py-4 px-6'>Sign Up</Link>
                 </div>
             </div>
+            <div className='min-h-[10vh]'></div>
 
         </>
 

@@ -109,7 +109,7 @@ function BoxProfile() {
 function TabButton({ text, activeTabState, thisTabState, handleClick }) {
     return (
         <>
-            <button className={`bg-transparent px-0.5 sm:px-1 font-semibold border-b border-dividePrimary hover:border-[#ebadb7] ${activeTabState === thisTabState ? 'text-[#f3bdc6]' : 'text-[rgba(255,255,255,0.40)]'}`}
+            <button className={`bg-transparent px-0.5 sm:px-1 font-semibold border-b border-dividePrimary hover:border-[#f3bec7] ${activeTabState === thisTabState ? 'text-[#f3bec7]' : 'text-[rgba(255,255,255,0.3)]'}`}
                 onClick={handleClick}>{text}</button>
         </>
     );

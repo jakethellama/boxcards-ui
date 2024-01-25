@@ -31,7 +31,9 @@ function Errors() {
     } else {
         return ( // client/routing error
             <>
-                <HeaderBar />
+                {
+                    e.status !== 404 ? <HeaderBar /> : null
+                }
                 <div className='mt-8 px-8 text-xl text-center flex flex-col items-center justify-center'>
                     <h1>Uh oh, something went wrong, please try again!</h1>
                     <h1>{e.status}</h1>
