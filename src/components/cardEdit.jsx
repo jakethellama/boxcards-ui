@@ -309,7 +309,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
                                     </svg>
                                     <svg
                                         onClick={handleDelete}
-                                        className={`h-5 ${side === 'word' ? 'fill-bgThree' : 'fill-bgFour'} stroke-[rgba(255,255,255,.7)] hover:stroke-fillPrimary ${pubOrDel === 'delete' ? 'fill-lightPink' : ''} colorTransOut`}
+                                        className={`h-5 ${side === 'word' ? 'fill-bgThree' : 'fill-bgFive'} stroke-[rgba(255,255,255,.7)] hover:stroke-fillPrimary ${pubOrDel === 'delete' ? 'fill-lightPink' : ''} colorTransOut`}
                                         viewBox="-0.75 -1.5 16 16.4"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <defs />
