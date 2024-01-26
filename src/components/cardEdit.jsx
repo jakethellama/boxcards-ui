@@ -199,14 +199,18 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
         const value = event.target.value;
 
         if (side === 'word') {
-            if (value.length > 50) {
+            if (newWordValue.length >= 50 && value.length >= 50) {
+                setFavError('Max 50 Characters');
+            } else if (value.length > 50) {
                 setFavError('Max 50 Characters');
                 setNewWordValue(value.substring(0, 50));
             } else {
                 setNewWordValue(value);
             }
         } else {
-            if (value.length > 250) {
+            if (newDefValue.length >= 250 && value.length >= 250) {
+                setFavError('Max 250 Characters');
+            } else if (value.length > 250) {
                 setFavError('Max 250 Characters');
                 setNewDefValue(value.substring(0, 250));
             } else {
@@ -263,7 +267,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
 
     return (
         <>
-            <div onClick={(handleCardClick)} className={`cardContainer  ${side === 'word' ? 'bg-bgThree' : 'bg-bgFour'} ${isSelected ? 'outline outline-green-300' : 'hover:outline hover:outline-fillPrimary '}`}>
+            <div onClick={(handleCardClick)} className={`cardContainer  ${side === 'word' ? 'bg-bgThree' : 'bg-bgFive'} ${isSelected ? 'ring ring-green-300' : 'hover:ring hover:ring-fillPrimary '}`}>
 
                 <div className='relative h-0'>
                     <div className='absolute w-full cardFeatureBar h-6'>
@@ -272,7 +276,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
                                 authUserInfoQ.data.favsIds === null ? <div></div>
                                     : <svg
                                         onClick={isSelectMode ? null : toggleFav}
-                                        className={`h-4 stroke-[rgba(255,255,255,.8)] hover:stroke-fillPrimary stroke-2 ${authUserInfoQ.data.favsIds.includes(cid) ? 'fill-yellow-200' : 'fill-transparent'}`}
+                                        className={`h-4 stroke-[rgba(255,255,255,.8)] hover:stroke-fillPrimary stroke-2 ${authUserInfoQ.data.favsIds.includes(cid) ? 'fill-yellow-200' : 'fill-transparent'} colorTransOut`}
                                         viewBox="-.25 -1 44.75 44"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <defs />
@@ -297,15 +301,15 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
                                         <defs />
                                         <g className='group'transform="translate(-0.00617888,4.0510525)">
                                             <path
-                                                className={` stroke-[rgba(255,255,255,.7)] group-hover:stroke-fillPrimary ${pubOrDel === 'publish' ? 'fill-lightPink' : 'fill-transparent'}`}
+                                                className={` stroke-[rgba(255,255,255,.7)] group-hover:stroke-fillPrimary ${pubOrDel === 'publish' ? 'fill-lightPink' : 'fill-transparent'} colorTransOut`}
                                                 d="m 2.8035604,-3.7891909 h 5.511661 c 2.7459146,0 4.1229136,2.7308576 4.1229136,5.0837411 v 8.4390351 c 0,2.4261787 0,2.7045527 -2.5354136,2.7045527 h -7.099161 c -2.52702534,0 -2.53726373,-0.278374 -2.53541445,-2.7045527 l 0.008387,-11.0057464 c 0.00171,-2.2386543 5.1e-7,-2.5170298 2.52702595,-2.5170298 z" />                                        <path
-                                                className='fill-[rgba(255,255,255,.7)] group-hover:fill-fillPrimary '
+                                                className='fill-[rgba(255,255,255,.7)] group-hover:fill-fillPrimary colorTransOut'
                                                 d="M 5.4762944,12.21804 5.4711444,4.1536993 H 3.7072556 L 6.3556632,1.0772706 8.9989222,4.1536993 H 7.2350346 l 0.00515,8.0643407 z" id="path3" />
                                         </g>
                                     </svg>
                                     <svg
                                         onClick={handleDelete}
-                                        className={`h-5 ${side === 'word' ? 'fill-bgThree' : 'fill-bgFour'} stroke-[rgba(255,255,255,.7)] hover:stroke-fillPrimary ${pubOrDel === 'delete' ? 'fill-lightPink' : ''}`}
+                                        className={`h-5 ${side === 'word' ? 'fill-bgThree' : 'fill-bgFour'} stroke-[rgba(255,255,255,.7)] hover:stroke-fillPrimary ${pubOrDel === 'delete' ? 'fill-lightPink' : ''} colorTransOut`}
                                         viewBox="-0.75 -1.5 16 16.4"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <defs />
@@ -339,7 +343,7 @@ function CardEdit({ cardRenderQueryKey, isSelectMode, handleSelect,
                             <p className='text-sm'>{references}</p>
                             <svg
                                 onClick={isSelectMode ? null : toggleEdit}
-                                className={`h-4 ${side === 'word' ? 'fill-bgThree' : 'fill-bgFour'} stroke-[rgba(255,255,255,.7)] ${isEditing ? 'fill-lightPink' : ''} hover:stroke-fillPrimary `}
+                                className={`h-4 ${side === 'word' ? 'fill-bgThree' : 'fill-bgFive'} stroke-[rgba(255,255,255,.7)] ${isEditing ? 'fill-lightPink' : ''} hover:stroke-fillPrimary colorTransOut`}
                                 viewBox="0 0 18.08704 18.087171">
                                 <defs />
                                 <g transform="translate(5.8510547,-0.63571518)">

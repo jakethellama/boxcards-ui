@@ -24,10 +24,10 @@ function SetSearchBar() {
 
     return (
         <>
-            <div className='font-semibold text-lg flex items-center bg-bgThree p-2 mx-0 rounded-2xl focus-within:ring-1 focus-within:ring-white hover:ring-1 hover:ring-white'>
+            <div className='font-semibold text-lg flex items-center bg-bgThree p-2 mx-0 rounded-2xl focus-within:ring-1 focus-within:ring-slate-300 hover:ring-2 hover:ring-slate-300 moreTransLin'>
                 <div onClick={handleSearch} className='ml-1 p-1 cursor-pointer group'>
                     <svg
-                        className='h-5 stroke-white fill-bgThree group-hover:fill-fillPrimary'
+                        className='h-5 stroke-white fill-bgThree group-hover:fill-fillPrimary colorTransLin'
                         viewBox="0 0 15.310295 15.337313"
                         xmlns="http://www.w3.org/2000/svg" >
                         <defs />

@@ -26,10 +26,10 @@ function CardSearchBar() {
 
     return (
         <>
-            <div className='flex items-center bg-bgTwo p-1.5 rounded-full focus-within:ring-1 focus-within:ring-fillPrimary hover:ring-1 hover:ring-fillPrimary'>
+            <div className='flex items-center bg-bgTwo p-1.5 rounded-full focus-within:ring-1 focus-within:ring-fillPrimary hover:ring-2 hover:ring-fillPrimary moreTransLin'>
                 <div onClick={handleSearch} className='ml-2 p-1 cursor-pointer group'>
                     <svg
-                        className='h-4 stroke-white fill-bgTwo group-hover:fill-fillPrimary'
+                        className='h-4 stroke-white fill-bgTwo group-hover:fill-fillPrimary colorTransLin'
                         viewBox="0 0 15.310295 15.337313"
                         xmlns="http://www.w3.org/2000/svg" >
                         <defs />

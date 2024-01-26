@@ -54,7 +54,7 @@ function SetList({ dataQueryKey, dataQueryFn, canPost, setContentError }) {
             </>
         );
     } else if (setsQuery.isPending) {
-        return <div>Loading Sets... </div>;
+        return <div className='loadingText'>Loading Sets... </div>;
     }
 
     if (setsQuery.data.length === 0) {
@@ -64,7 +64,7 @@ function SetList({ dataQueryKey, dataQueryFn, canPost, setContentError }) {
                     canPost === true && authCheckQ.data.username === params.username
                         ? <button onClick={handlePostSet} className='buttonStyle buttonSize mb-5 xxs:mb-6 '>Create New Set</button> : null
                 }
-                <div className=''>Oops, this has no sets yet!</div>
+                <div className='motion-safe:fadeIn'>Oops, this has no sets yet!</div>
             </>
         );
     } else {
@@ -72,9 +72,9 @@ function SetList({ dataQueryKey, dataQueryFn, canPost, setContentError }) {
             <>
                 {
                     canPost === true && authCheckQ.data.username === params.username
-                        ? <button onClick={handlePostSet} className='buttonStyle buttonSize mb-5 xxs:mb-6'>Create New Set</button> : null
+                        ? <button onClick={handlePostSet} className='buttonStyle buttonSize mb-5 xxs:mb-6 motion-safe:fadeIn'>Create New Set</button> : null
                 }
-                <div className='flex flex-col gap-[1.11rem]'>
+                <div className='flex flex-col gap-[1.12rem] motion-safe:fadeIn'>
                     {
                         setsQuery.data.map((set) => {
                             return <SetListEntry name={set.name} author={set.author}
@@ -96,7 +96,7 @@ function SetListEntry({ name, sid, author, isPublished, authorId }) {
 
     return <Link to={`/sets/${sid}`}
         onClick={handleEntryClick}
-        className='buttonStyle bg-bgThree active:bg-bgFour hover:ring-white font-normal py-3 px-3.5 gap-6 flex justify-between items-center'>
+        className='buttonStyle bg-bgThree active:bg-bgFour hover:ring-slate-300 font-normal py-3 px-3.5 gap-6 flex justify-between items-center'>
         <div className='break-words overflow-auto'>{name}</div>
         <div className='text-xs sm:text-sm'>{isPublished ? 'Published' : 'Private'}</div>
     </Link>;

@@ -18,11 +18,11 @@ function Home() {
     return (
         <>
             <div className='min-h-[92vh] flex flex-col items-center justify-center'>
-                <Link to='/cards' className='cursor-pointer text-[3.7rem] font-bold hover:text-fillPrimary'>BoxCards</Link>
+                <Link to='/cards' className='cursor-pointer text-[3.7rem] font-bold hover:text-fillPrimary colorTransOut duration-200'>BoxCards</Link>
                 <div className='relative p-2 mt-1 mb-8 cursor-pointer group'>
                     <Link to='/cards' className='absolute top-0 left-0 w-full h-full'></Link>
                     <svg
-                        className='h-[5.25rem] stroke-black fill-white group-hover:fill-fillPrimary '
+                        className='h-[5.25rem] stroke-black fill-white group-hover:fill-fillPrimary colorTransOut duration-200'
                         viewBox="0 0 28.716567 20.331147"
                         xmlns="http://www.w3.org/2000/svg" >
                         <defs />

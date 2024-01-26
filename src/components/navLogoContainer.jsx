@@ -9,7 +9,7 @@ function NavLogoContainer() {
             <div className='relative ml-2 ssm:ml-0 p-0.5 cursor-pointer group'>
                 <Link to={`/boxes/${authCheckQ.data.username}`} className='absolute top-0 left-0 w-full h-full'></Link>
                 <svg
-                    className='h-9 stroke-black fill-white group-hover:fill-fillPrimary '
+                    className='h-9 stroke-black fill-white group-hover:fill-fillPrimary colorTransOut duration-200'
                     viewBox="0 0 28.716567 20.331147"
                     xmlns="http://www.w3.org/2000/svg" >
                     <defs />
@@ -41,7 +41,7 @@ function NavLogoContainer() {
             <div className='relative ml-2 xs:ml-6 ssm:ml-11 sm:ml-0 p-0.5 cursor-pointer group'>
                 <Link to={'/'} className='absolute top-0 left-0 w-full h-full'></Link>
                 <svg
-                    className='h-9 stroke-black fill-white group-hover:fill-slate-400 '
+                    className='h-9 stroke-black fill-white group-hover:fill-slate-400 colorTransOut duration-200'
                     viewBox="0 0 28.716567 20.331147"
                     xmlns="http://www.w3.org/2000/svg" >
                     <defs />

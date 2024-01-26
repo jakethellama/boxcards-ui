@@ -128,7 +128,7 @@ function CardGrid({ dataQueryKey, dataQueryFn, canRemove, canPost, setContentErr
     }
 
     if (cardsQuery.isPending) {
-        return <div>Loading Cards... </div>;
+        return <div className='loadingText'>Loading Cards... </div>;
     } else if (cardsQuery.isError) {
         return (
             <div className='text-center errorText'>
@@ -148,16 +148,16 @@ function CardGrid({ dataQueryKey, dataQueryFn, canRemove, canPost, setContentErr
                     canPost === true && authCheckQ.data.username === params.username && isSelectMode === false
                         ? <button onClick={handlePostCard} className='buttonSize buttonStyle mb-5 xxs:mb-6'>Create New Card</button> : null
                 }
-                <div className=''>Oops, this has no cards yet!</div>
+                <div className='motion-safe:fadeIn'>Oops, this has no cards yet!</div>
             </>
         );
     } else {
         return (
             <>
-                <div className='flex flex-wrap gap-x-5 gap-y-4 mb-5 xxs:mb-6'>
+                <div className='flex flex-wrap gap-x-5 gap-y-4 mb-5 xxs:mb-6 motion-safe:fadeIn'>
                     {
                         authCheckQ.data.isAuth === true
-                            ? <button onClick={toggleSelectMode} className={`buttonSize buttonStyle ${isSelectMode ? 'bg-lightPink active:bg-[#eaa9b3] hover:ring-slate-300' : ''}`}>{isSelectMode ? 'Cancel Select' : 'Select Cards'}</button> : null
+                            ? <button onClick={toggleSelectMode} className={`buttonSize buttonStyle active:bg-bgTwo ${isSelectMode ? 'active:bg-lightPink bg-lightPink  hover:ring-slate-300' : ''}`}>{isSelectMode ? 'Cancel Select' : 'Select Cards'}</button> : null
                     }
                     {
                         canPost === true && authCheckQ.data.username === params.username && isSelectMode === false
@@ -179,12 +179,12 @@ function CardGrid({ dataQueryKey, dataQueryFn, canRemove, canPost, setContentErr
                             : null
                     }
                     {
-                        hasMax === true ? <div className={`text-sm ml-auto self-start ${cardsQuery.data.length === 50 ? 'text-red-400' : ''}`}>Cards: {cardsQuery.data.length}/50 </div>
+                        hasMax === true ? <div className={`text-sm ml-auto self-start ${cardsQuery.data.length === 50 ? 'text-red-400' : ''} colorTransOut`}>Cards: {cardsQuery.data.length}/50 </div>
                             : <div className='text-sm ml-auto'>Cards: {cardsQuery.data.length}</div>
                     }
 
                 </div>
-                <div className='grid gap-x-6 gap-y-5 xxs:gap-y-6 grid-cols-cardAFit grid-rows-card auto-rows-card'>
+                <div className='grid gap-x-6 gap-y-5 xxs:gap-y-6 grid-cols-cardAFit grid-rows-card auto-rows-card motion-safe:fadeIn'>
                     {
                         cardsQuery.data.map((card, index) => {
                             if (cardInstances[card._id]) {

@@ -27,7 +27,7 @@ function NavDropDown() {
             <div className="relative" ref={menuRef}>
                 <div onClick={() => setOpen(!open)} className='px-1.5 py-2 mt-[1.5px] cursor-pointer group'>
                     <svg
-                        className={`h-4 group-hover:stroke-fillPrimary group-hover:fill-fillPrimary ${open ? 'stroke-fillPrimary fill-fillPrimary' : 'stroke-white fill-white'}`}
+                        className={`h-4 group-hover:stroke-fillPrimary group-hover:fill-fillPrimary ${open ? 'stroke-fillPrimary fill-fillPrimary' : 'stroke-white fill-white'} colorTransOut duration-200`}
                         viewBox="0 0 38 26"
                         xmlns="http://www.w3.org/2000/svg" >
                         <defs/>
@@ -50,7 +50,7 @@ function NavDropDown() {
                         </g>
                     </svg>
                 </div>
-                <ul className={`absolute min-w-max  z-50 mt-2 ${open ? 'block' : 'hidden'}`}>
+                <ul className={`absolute min-w-max  z-50 mt-2 ${open ? 'block' : 'hidden'} motion-safe:fadeInFast`}>
                     {authCheckQ.data.isAuth ? <NavDropDownLink text="Your Box" goTo={`../boxes/${authCheckQ.data.username}`} /> : null}
                     <NavDropDownLink text="Set Search " goTo="../sets"/>
                     <NavDropDownLink text="Card Search" goTo="../cards"/>

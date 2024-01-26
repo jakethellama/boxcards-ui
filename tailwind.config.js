@@ -19,14 +19,14 @@ export default {
             colors: {
                 bgPrimary: '#171520',
                 bgTwo: '#352f48',
-                bgThree: '#494363',
-                bgFour: '#645c89',
-                bgFive: '#78709f',
+                bgThree: '#4e4769',
+                bgFour: '#615985',
+                bgFive: '#756d9d',
                 fillPrimary: '#94a3b8', // slate-400
                 textPrimary: 'rgba(255, 255, 255, 0.94)',
                 dividePrimary: 'rgba(255, 255, 255, 0.3)',
                 errorPrimary: '#ef4444', // red-500
-                lightPink: '#e697a4',
+                lightPink: '#f2afd3',
             },
             screens: {
                 xxs: '400px',

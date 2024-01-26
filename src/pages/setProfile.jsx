@@ -57,7 +57,7 @@ function SetProfile() {
                             curSetInfoQ.data.author === null ? null : <div className='relative inline-block peer cursor-pointer'>
                                 <Link className='absolute h-full w-full top-0 left-0' to={`/boxes/${curSetInfoQ.data.author}`}></Link>
                                 <svg
-                                    className={'h-9 inline-block fill-green-200 ' }
+                                    className={`h-9 inline-block ${curSetInfoQ.isPlaceholderData ? 'fill-transparent' : 'fill-green-200'} colorTransLin duration-75` }
                                     viewBox="0 0 99 99"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <defs />
@@ -70,7 +70,7 @@ function SetProfile() {
                                 </svg>
                             </div>
                         }
-                        <Link to={`/boxes/${curSetInfoQ.data.author}`} className='ml-3 inline-block font-medium cursor-pointer hover:text-fillPrimary peer-hover:text-fillPrimary '>{curSetInfoQ.data.author}</Link>
+                        <Link to={`/boxes/${curSetInfoQ.data.author}`} className='ml-3 inline-block font-medium cursor-pointer hover:text-blue-300 peer-hover:text-blue-300 colorTransLin duration-100'>{curSetInfoQ.data.author}</Link>
                     </div>
 
                     <div className='mt-[-0.2rem]'>

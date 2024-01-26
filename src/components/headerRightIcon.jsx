@@ -73,7 +73,7 @@ function HeaderRightIcon() {
                 <div className='relative mr-0.5' ref={dropDownRef}>
                     <svg
                         onClick={handleIconClick}
-                        className={`h-9 cursor-pointer stroke-[5] fill-green-200 hover:stroke-fillPrimary ${open ? 'stroke-fillPrimary' : ''}` }
+                        className={`h-9 cursor-pointer stroke-[6] colorTransOut fill-green-200 hover:stroke-fillPrimary ${open ? 'stroke-fillPrimary' : 'stroke-transparent'} ` }
                         viewBox="-1 -1 100 100"
                         xmlns="http://www.w3.org/2000/svg">
                         <defs />
@@ -85,7 +85,7 @@ function HeaderRightIcon() {
                         </g>
                     </svg>
 
-                    <ul className={`absolute z-50 ml-[-2.6rem] mt-2 ${open ? 'block' : 'hidden'}`}>
+                    <ul className={`absolute z-50 ml-[-2.6rem] mt-2 ${open ? 'block' : 'hidden'} motion-safe:fadeInFast`}>
                         <>
                             {
                                 <IconDropDownItem onClick={handleLogoutClick} name={'Logout'} />

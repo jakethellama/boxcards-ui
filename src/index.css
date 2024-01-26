@@ -29,28 +29,74 @@
         min-height: 98vh;
         @apply px-3.5 xxs:px-5
     }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes late-appear {
+        0% {
+            opacity: 0;
+        }
+        99% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 }
 
 @tailwind components;
 
 @layer components {
+    .fadeIn {
+        animation: fade-in 0.41s;
+    }
+    .fadeInFast {
+        animation: fade-in 0.18s;
+    }
+    .delayAppear{
+        animation: late-appear 2s;
+    }
+    .loadingText {
+        @apply mt-3 ml-2 text-bgFour delayAppear
+    }
     .dropDownItem {
-        @apply block pl-3 pr-3 py-2 shadow-fillPrimary shadow-sm cursor-pointer hover:bg-bgFour bg-bgTwo first:border-t border-x last:border-b border-fillPrimary first:rounded-t-lg last:rounded-b-lg;
+        @apply block pl-3 pr-3 py-2 shadow-fillPrimary shadow-sm cursor-pointer hover:bg-bgFour bg-bgTwo first:border-t border-x last:border-b border-fillPrimary first:rounded-t-lg last:rounded-b-lg colorTransLin duration-100;
     }
     .buttonStyle {
-        @apply font-medium bg-bgTwo rounded-lg hover:ring-1 hover:ring-fillPrimary active:bg-bgThree
+        @apply font-medium bg-bgTwo rounded-lg hover:ring-2 hover:ring-fillPrimary active:bg-bgThree moreTransOut
     }
     .buttonSize {
         @apply py-3 px-4
     }
     .cardContainer {
-        @apply flex flex-col px-3 py-1.5 rounded-[1.2rem] overflow-auto cursor-pointer 
+        @apply flex flex-col px-3 py-1.5 rounded-[1.2rem] overflow-auto cursor-pointer moreTransLin duration-100
     }
     .cardFeatureBar {
         @apply flex justify-between items-center  border-dividePrimary
     }
     .errorText {
         @apply text-lg font-semibold
+    }
+    .colorTransLin {
+        @apply motion-safe:transition-colors motion-safe:ease-linear
+    }
+    .colorTransOut {
+        @apply motion-safe:transition-colors motion-safe:ease-out
+    }
+    .moreTransLin {
+        @apply motion-safe:transition motion-safe:ease-linear
+    }
+    .moreTransOut {
+        @apply motion-safe:transition-all motion-safe:ease-out
     }
 }
 

@@ -103,12 +103,10 @@ function SetPatchDropDown({ setIsNameTextOpen, nameValue, setErrorMessage }) {
                 </svg>
             </div>
 
-            <ul className={`absolute min-w-max z-50 mt-2.5 right-0 ${open ? 'block' : 'hidden'}`}>
-
+            <ul className={`absolute min-w-max z-50 mt-2.5 right-0 ${open ? 'block' : 'hidden'} motion-safe:fadeInFast`}>
                 <SetPatchDropDownItem name={'Edit Name'} handleItemClick={handleEditClick} />
                 <SetPatchDropDownItem name={'Publish Set'} handleItemClick={handlePublishClick}/>
                 <SetPatchDropDownItem name={'Delete Set'} handleItemClick={handleDeleteClick}/>
-
             </ul>
         </div>
     );

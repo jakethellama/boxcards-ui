@@ -51,7 +51,7 @@ function BoxProfile() {
             case 'info':
                 return (
                     <>
-                        <p className='mt-[-0.5rem] text-lg font-semibold'>Icon: <svg
+                        <p className='mt-[-0.5rem] text-lg font-semibold motion-safe:fadeIn'>Icon: <svg
                             className={'h-10 ml-0.5 fill-green-200 inline'}
                             viewBox="-1 -1 100 100"
                             xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@ function BoxProfile() {
                                     r="47.533257" />
                             </g>
                         </svg></p>
-                        <p className='text-lg font-semibold'>Username: {params.username}</p>
+                        <p className='text-lg font-semibold motion-safe:fadeIn'>Username: {params.username}</p>
                     </>
                 );
             case 'sets':
@@ -109,7 +109,7 @@ function BoxProfile() {
 function TabButton({ text, activeTabState, thisTabState, handleClick }) {
     return (
         <>
-            <button className={`bg-transparent px-0.5 sm:px-1 font-semibold border-b border-dividePrimary hover:border-[#f3bec7] ${activeTabState === thisTabState ? 'text-[#f3bec7]' : 'text-[rgba(255,255,255,0.3)]'}`}
+            <button className={`bg-transparent px-1 sm:px-1.5 text-lg font-semibold border-b border-dividePrimary hover:border-[#f7add5] ${activeTabState === thisTabState ? 'text-[#f6aed5]' : 'text-[rgba(255,255,255,0.3)]'} colorTransOut`}
                 onClick={handleClick}>{text}</button>
         </>
     );

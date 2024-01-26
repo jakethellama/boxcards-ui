@@ -41,7 +41,7 @@ function AddToSetDropDown({ toggleSelectMode, selectedCIDs }) {
 
                 <ul className={`absolute mt-2.5 z-50 text-right xxs:text-left right-0 
                     min-w-[130px] max-w-[204px] xs:max-w-[303px] sm:max-w-[420px] md:max-w-[1000px] 
-                    break-words xxs:right-auto ${open ? 'block' : 'hidden'}`}>
+                    break-words xxs:right-auto ${open ? 'block' : 'hidden'} motion-safe:fadeInFast`}>
                     {authUserSetsQ.isError ? <div className='md:w-full md:min-w-max pl-3 pr-3 py-2 shadow-fillPrimary shadow-sm border rounded-lg bg-bgTwo border-red-400 text-errorPrimary'>Error Getting Your Sets, Please Reload</div>
                         : <>
                             {

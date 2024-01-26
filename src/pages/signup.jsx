@@ -96,14 +96,14 @@ function SignUp() {
                 <h1 className='text-3xl font-bold'>Sign Up</h1>
 
                 <p className='font-medium text-lg mt-3'>Username</p>
-                <input className={`bg-bgThree block px-2 py-1 mr-0.5 focus:ring-fillPrimary focus:ring-2 ${usernameError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none`} value={usernameValue} onChange={handleUsernameChange} />
+                <input className={`bg-bgThree block px-2 py-1 mr-0.5 focus:ring-fillPrimary focus:ring-2 ${usernameError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none moreTransLin`} value={usernameValue} onChange={handleUsernameChange} />
                 <p className={`text-xs text-errorPrimary ${usernameError !== null ? '' : 'hidden'}`}>{usernameError}</p>
 
                 <p className='font-medium text-lg mt-4'>Password</p>
-                <input type="password" className={`bg-bgThree block px-2 py-1 mr-0.5 focus:ring-fillPrimary focus:ring-2 ${passwordError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none`} value={passwordValue} onChange={handlePasswordChange}/>
+                <input type="password" className={`bg-bgThree block px-2 py-1 mr-0.5 focus:ring-fillPrimary focus:ring-2 ${passwordError !== null ? 'ring-1 ring-errorPrimary' : ''}  rounded-lg focus:outline-none moreTransLin`} value={passwordValue} onChange={handlePasswordChange}/>
                 <p className={`text-xs text-errorPrimary ${passwordError !== null ? '' : 'hidden'}`}>{passwordError}</p>
 
-                <button className='bg-bgFour hover:ring-1 hover:ring-fillPrimary active:bg-bgFive rounded-lg font-medium mt-6 py-2 px-6 self-start'>Submit</button>
+                <button className='bg-bgFour hover:ring-2 hover:ring-fillPrimary active:bg-bgFive rounded-lg font-medium mt-6 py-2 px-6 self-start moreTransOut'>Submit</button>
                 <p className={`text-xs ${submitStatus === null ? 'hidden' : ''} ${submitStatus === 'Signing Up ...' ? 'text-green-400' : 'text-red-500'}`}>{submitStatus}</p>
 
                 <div className='flex gap-6 xxs:gap-8 mt-auto'>

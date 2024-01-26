@@ -70,7 +70,7 @@ function CardNoEdit({ isSelectMode, handleSelect,
 
     return (
         <>
-            <div onClick={(handleCardClick)} className={` cardContainer ${side === 'word' ? 'bg-bgThree' : 'bg-bgFour'} ${isSelected ? 'outline outline-green-300' : 'hover:outline hover:outline-fillPrimary '}`}>
+            <div onClick={(handleCardClick)} className={` cardContainer ${side === 'word' ? 'bg-bgThree' : 'bg-bgFive'} ${isSelected ? 'ring ring-green-300' : 'hover:ring hover:ring-fillPrimary '}`}>
 
                 <div className='relative h-0'>
                     <div className='absolute w-full cardFeatureBar h-6'>
@@ -79,7 +79,7 @@ function CardNoEdit({ isSelectMode, handleSelect,
                                 authUserInfoQ.data.favsIds === null ? <div></div>
                                     : <svg
                                         onClick={isSelectMode ? null : toggleFav}
-                                        className={`h-4 stroke-[rgba(255,255,255,.8)] hover:stroke-fillPrimary stroke-2 ${authUserInfoQ.data.favsIds.includes(cid) ? 'fill-yellow-200' : 'fill-transparent'}`}
+                                        className={`h-4 stroke-[rgba(255,255,255,.8)] hover:stroke-fillPrimary stroke-2 ${authUserInfoQ.data.favsIds.includes(cid) ? 'fill-yellow-200' : 'fill-transparent'} colorTransOut`}
                                         viewBox="-.25 -1 44.75 44"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <defs />
