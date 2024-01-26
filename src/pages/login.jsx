@@ -91,7 +91,7 @@ function Login() {
     }
 
     return (
-        <div className='flex h-screen items-center justify-center'>
+        <div className='flex h-screen items-center justify-center fadeIn'>
             <form onSubmit={handleSubmit} className='flex flex-col gap-2 overflow-auto max-w-[500px] max-h-[540px] px-3.5 pt-3 pb-3 xxs:px-4 xxs:pt-3.5  w-[88%] h-[90%] rounded-2xl bg-bgTwo'>
                 <h1 className='text-3xl font-bold'>Login</h1>
 

@@ -6,7 +6,7 @@ function NavLogoContainer() {
 
     if (authCheckQ.data.isAuth) {
         return (
-            <div className='relative ml-2 ssm:ml-0 p-0.5 cursor-pointer group'>
+            <div className='relative ml-3 ssm:ml-0 p-0.5 cursor-pointer group'>
                 <Link to={`/boxes/${authCheckQ.data.username}`} className='absolute top-0 left-0 w-full h-full'></Link>
                 <svg
                     className='h-9 stroke-black fill-white group-hover:fill-fillPrimary colorTransOut duration-200'
@@ -38,7 +38,7 @@ function NavLogoContainer() {
         );
     } else {
         return (
-            <div className='relative ml-2 xs:ml-6 ssm:ml-11 sm:ml-0 p-0.5 cursor-pointer group'>
+            <div className='relative ml-8 ssm:ml-11 sm:ml-0 p-0.5 cursor-pointer group'>
                 <Link to={'/'} className='absolute top-0 left-0 w-full h-full'></Link>
                 <svg
                     className='h-9 stroke-black fill-white group-hover:fill-slate-400 colorTransOut duration-200'

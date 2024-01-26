@@ -17,7 +17,7 @@ function Home() {
 
     return (
         <>
-            <div className='min-h-[92vh] flex flex-col items-center justify-center'>
+            <div className='min-h-[92vh] flex flex-col items-center justify-center fadeIn'>
                 <Link to='/cards' className='cursor-pointer text-[3.7rem] font-bold hover:text-fillPrimary colorTransOut duration-200'>BoxCards</Link>
                 <div className='relative p-2 mt-1 mb-8 cursor-pointer group'>
                     <Link to='/cards' className='absolute top-0 left-0 w-full h-full'></Link>
